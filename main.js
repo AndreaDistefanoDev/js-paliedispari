@@ -24,8 +24,9 @@ if (palindroma(word)) {
     console.log('Your word is not a palidron');
 
 }
+
 // Second method
-// split/reverse/join
+// split
 
 function splitWord(userWord) {
     const chars = [];
@@ -37,10 +38,34 @@ function splitWord(userWord) {
 const splittedWord = splitWord(word)
 console.log(splittedWord);
 
+//reverse
 function arrayReverse(arr) {
     const revWord = []
+    for (let i = arr.length - 1; i >= 0; i--) {
+        const thisarray = arr[i]
+        revWord.push(thisarray);
+    }
+    console.log(revWord);
+    return revWord
+
+}
+const arrayReversed = arrayReverse(splittedWord);
+console.log(arrayReversed);
+
+//join
+function joinArraytoString(arr) {
+    let reversedString = ''
+    for (let i = 0; i < arr.length; i++){
+        const thisChar = arr[i]
+        reversedString += thisChar        
+    }
+    console.log(reversedString);
+    return reversedString
+    
 }
 
+const myReverseString=joinArraytoString(arrayReversed)
+console.log(myReverseString);
 
 /*Pari e Dispari
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.

@@ -55,16 +55,16 @@ console.log(arrayReversed);
 //join
 function joinArraytoString(arr) {
     let reversedString = ''
-    for (let i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         const thisChar = arr[i]
-        reversedString += thisChar        
+        reversedString += thisChar
     }
     console.log(reversedString);
     return reversedString
-    
+
 }
 
-const myReverseString=joinArraytoString(arrayReversed)
+const myReverseString = joinArraytoString(arrayReversed)
 console.log(myReverseString);
 
 /*Pari e Dispari
@@ -74,3 +74,36 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.*/
 
+const userChoice = prompt('Scegli tra pari o dispari')
+const userNumber = Number(prompt('Scegli un numero da 1 a 5'))
+const pcNumber = randomNumber(1, 5)
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(userChoice, userNumber, pcNumber);
+
+const result = sum(userNumber, pcNumber)
+console.log(result);
+
+if (isEven(result) === userChoice) {
+    console.log('You Win');
+
+} else {
+    console.log('Win PC');
+
+}
+
+
+function sum(num1, num2) {
+    return num1 + num2
+}
+function isEven(num) {
+    console.log(num);
+    if (num % 2 === 0){
+        return 'pari'
+    }
+    return 'dispari'
+
+}
